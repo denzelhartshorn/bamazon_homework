@@ -76,3 +76,21 @@ function promptCustomerForQuantity(product) {
       }
     });
 }
+
+function makePurchase(product, quantity) {
+  connection.query(
+    "UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?"[
+      (quantity, product.item_id)
+    ],
+    function(err, res) {
+      console.log(
+        "\nSuccessfully purchased " +
+          quantity +
+          " " +
+          product.product_name +
+          "'s!"
+      );
+      loadProducts();
+    }
+  );
+}
