@@ -94,3 +94,19 @@ function makePurchase(product, quantity) {
     }
   );
 }
+
+function checkInventory(choiceId, inventory) {
+  for (var i = 0; i < inventory.length; i++) {
+    if (inventory[i].item_id === choiceId) {
+      return inventory[i];
+    }
+  }
+  return null;
+}
+
+function checkIfShouldExit(choice) {
+  if (choice.toLowerCase() === "q") {
+    console.log("Goodbye!");
+    process.exit(0);
+  }
+}
