@@ -1,4 +1,5 @@
-let mysql = require('mysql');
+//is bamazonDB the right thing to put in here?  or is it "mysql" or is it the ../ source
+let bamazonDB = require('bamazonDB');
 
 let connection = mysql.createConnection({
     host: 'localhost',
